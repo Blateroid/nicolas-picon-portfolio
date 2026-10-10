@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*
+.DS_Store
+
+# Kept locally, not published (private notes, raw research, agent context)
+research/
+working/
+preview/
+.agents/
+SPEC.md
+TASKS.md
+skills-lock.json
