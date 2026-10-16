@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     '/', '/about', '/projects', '/education/foster-mba', '/events/ai-spark',
     ...publicProjects.map(p => `/projects/${p.slug}`),
-    ...projectSummaries.map(p => `/projects/${p.slug}`),
+    ...projectSummaries.filter(p => !('href' in p)).map(p => `/projects/${p.slug}`),
     ...experience.map(item => `/experience/${item.slug}`),
     ...leadership.map(item => `/leadership/${item.slug}`),
     ...volunteering.map(item => item.url).filter(url => url.startsWith('/volunteering/')),

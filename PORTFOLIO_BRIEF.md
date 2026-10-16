@@ -18,7 +18,7 @@ Help Nicolas Picon get hired as a **product manager**. A visitor should leave kn
 - Theme: human-centered design. Start with the people, learn what they need, then build and check whether it can last as a business.
 - Proof, in priority order:
   1. **HeyLily.** User research with older adults changed a core feature: Trusted Circle became optional. A school project, so it has no production or sales numbers, and it doesn't need them.
-  2. **TheraT.** Customer discovery (about 17 interviews), the commercial case for a UW spinout, and team awards ($75K Innovation Gap Fund, $10K Hollomon prize).
+  2. **TheraT.** Customer discovery (30+ interviews), the commercial case for a UW spinout, and team awards ($75K Innovation Gap Fund, $10K Hollomon prize).
   3. **Sticker Buddy.** A product he built in Lovable and used to fill his own album, shaped by feedback from other collectors.
   4. **Uber internship.** Merchant research turned into a PRD and a prototype, with executive buy-in.
   5. **AI Spark and the MBA Tech Club.** Leadership, and adapting when the original funding fell through.

@@ -20,7 +20,7 @@ export const stickerBuddy = {
   previewHeading: 'What do I have? What do I need? What can I trade?',
   previewDescription: 'One collection feeds the album tracker, the missing-sticker list, the duplicate inventory, and the progress statistics. The catalog has 980 base-album stickers plus 12 Coca-Cola extras across 52 sections.',
   discovery: {
-    stat: '~28',
+    stat: '28',
     statLabel: 'collectors using it',
     who: 'I started with friends and family who were filling the album too. Then I shared it with my volunteer team at the World Cup, and after that with a WhatsApp group of collectors.',
     findings: [],

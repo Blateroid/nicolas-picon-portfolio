@@ -43,7 +43,12 @@
 .tech-stack{margin-top:24px}.tech-stack .small-label{margin-bottom:12px}.tech-stack ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}.tech-stack li{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:#fffdf8;font-size:14px}.tech-stack img{width:24px;height:24px;object-fit:contain}.sticker-buddy-detail-image{max-width:330px;margin:32px auto}.sticker-buddy-detail-image img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}.sticker-buddy-detail-image figcaption{margin-top:12px;color:var(--muted);font-size:13px;line-height:1.5}
 .tech-stack li.tech-tool-highlight{background:linear-gradient(135deg,#fff0e8,#f5eaff);border-color:#c796b0;font-weight:600;box-shadow:0 2px 8px #a6598620}
 .tech-stack li.tech-tool-highlight img{width:32px;height:32px;flex-shrink:0}
+.tech-stack li.tech-tool-claude{background:linear-gradient(135deg,#fff2e7,#ffe8da);border-color:#cd9876;box-shadow:0 2px 8px #b9683420}
+.tech-stack li.tech-tool-gemini{background:linear-gradient(135deg,#eff5ff,#e5eeff);border-color:#91acd5;box-shadow:0 2px 8px #4274bd20}
+.tech-stack li.tech-tool-gpt{background:linear-gradient(135deg,#edf8f1,#ddf0e6);border-color:#83b49c;box-shadow:0 2px 8px #37795c20}
 .sticker-buddy-page .tech-stack{padding-bottom:24px}
+.project-mascot{display:block;width:128px;height:128px;object-fit:contain;margin-bottom:16px}
+.project-card-mascot{display:inline-block;width:48px;height:52px;object-fit:contain;vertical-align:middle;margin-right:8px}
 .compact-project-stage{display:block;font-size:12px;color:var(--muted);margin:10px 0;line-height:1.5}.product-experiment-page .case-heading h1{font-size:52px}.product-experiment-page .tech-stack{padding-bottom:24px}.product-experiment-page .experience-page-section{max-width:720px}.product-experiment-image{margin:0 0 24px}.product-experiment-image img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}.product-experiment-image figcaption,.product-experiment-link p{font-size:13px;line-height:1.6;color:var(--muted);margin-top:12px}.product-experiment-link{margin-bottom:48px}.product-experiment-link .button{max-width:100%;white-space:normal}@media(max-width:640px){.product-experiment-page .case-heading h1{font-size:38px}.product-experiment-link{margin-bottom:32px}}
 
 /* Blue Ember uses the original 192 × 208 sprite cells without enlarging them. */
@@ -160,3 +165,55 @@
 /* HeyLily problem sources and demo disclosure */
 .case-content section p.problem-sources{font-size:13px;color:var(--muted);margin-top:12px}
 .pitch-demos .disclosure{margin-top:0}
+
+/* Focus filter */
+.home-focus-bar{margin:8px 48px 0}
+.home-focus-bar .focus-filter-wrap{margin:0}
+.focus-filter-wrap{margin:0 0 16px}
+.focus-filter{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:4px}
+.focus-label{font-size:12px;color:var(--muted);margin-right:4px}
+.focus-chip{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:4px 8px;border:0;border-radius:8px;background:transparent;color:var(--muted);font:inherit;font-size:12px;cursor:pointer;transition:background .18s ease,color .18s ease}
+.focus-chip:hover{background:#f2f0e4;color:var(--ink)}
+.focus-chip:active{background:#dce1d7;color:var(--ink)}
+.focus-chip[aria-pressed="true"]{background:#e9ede3;color:var(--ink);font-weight:600}
+.focus-chip:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media(max-width:900px){.home-focus-bar{margin-inline:32px}}
+@media(max-width:640px){.home-focus-bar{margin-inline:24px}.focus-filter{justify-content:flex-start}}
+html[data-focus="product"] [data-focus]:not([data-focus~="product"]){display:none}
+html[data-focus="healthcare"] [data-focus]:not([data-focus~="healthcare"]){display:none}
+html[data-focus="investing"] [data-focus]:not([data-focus~="investing"]){display:none}
+
+/* Focus filter: empty states */
+.focus-empty{display:none;color:var(--muted)}
+html[data-focus="product"] #selected-work:not(:has([data-focus~="product"])){display:none}
+html[data-focus="product"] .page-shell:has(.focus-filter):not(:has([data-focus~="product"])) .focus-empty{display:block}
+html[data-focus="healthcare"] #selected-work:not(:has([data-focus~="healthcare"])){display:none}
+html[data-focus="healthcare"] .page-shell:has(.focus-filter):not(:has([data-focus~="healthcare"])) .focus-empty{display:block}
+html[data-focus="investing"] #selected-work:not(:has([data-focus~="investing"])){display:none}
+html[data-focus="investing"] .page-shell:has(.focus-filter):not(:has([data-focus~="investing"])) .focus-empty{display:block}
+
+/* Homepage background section disclosures */
+.profile-disclosure>summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:48px;cursor:pointer;list-style:none}
+.profile-disclosure>summary::-webkit-details-marker{display:none}
+.profile-disclosure>summary:hover{color:var(--accent)}
+.profile-disclosure>summary:active{color:#192e24}
+.profile-disclosure>summary .toggle{flex:0 0 16px}
+.profile-disclosure[open]>summary .toggle::after{transform:rotate(0deg)}
+.profile-disclosure .leadership-card>div{min-width:0;overflow-wrap:anywhere}
+.award-organization{font-size:12px;color:var(--muted);margin:8px 0 0}
+
+.skill-source{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.6 ui-monospace,monospace;padding:16px;background:#f2f0e4;border-radius:8px;max-height:640px;overflow:auto}
+
+/* Featured project cards and project ordering */
+.featured-visual{background:#eef2e8;padding:16px 0}
+.all-projects-link{margin:32px 0 0;text-align:center}
+.compact-project-card.is-placeholder{border-style:dashed;background:transparent}
+
+/* Featured card: phone screenshot peeking from the bottom */
+.featured-visual.is-device{padding:0;background:radial-gradient(circle at 30% 20%,#f7f3e6 0,#e4eedf 55%,#d3e4d0 100%)}
+.device-peek{position:absolute;top:32px;left:50%;width:210px;transform:translateX(-50%) rotate(-4deg);border:7px solid #253a34;border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 22px 44px #253a3440;transition:transform .25s ease}
+.device-peek img{display:block;width:100%;height:auto}
+.visual-link:hover .device-peek{transform:translateX(-50%) rotate(-2deg) translateY(-6px)}
+@media(prefers-reduced-motion:reduce){.device-peek{transition:none}}
+@media(max-width:640px){.device-peek{width:180px;top:24px}}
+.visual-link:hover .featured-visual.is-device{background:radial-gradient(circle at 30% 20%,#f7f3e6 0,#e4eedf 55%,#d3e4d0 100%)}

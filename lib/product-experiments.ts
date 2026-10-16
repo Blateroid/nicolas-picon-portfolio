@@ -1,16 +1,79 @@
+import { publicResumeSkill } from './resume-tailoring';
 import type { TechTool } from '@/components/tech-stack';
 import type { Discovery } from '@/lib/discovery';
 
 export type ProductExperiment = {
   slug: string; title: string; symbol: string; stage: string; summary: string;
-  hook: string; introduction: string; appUrl: string; linkLabel: string; linkNote?: string;
+  hook: string; introduction: string; appUrl?: string; linkLabel?: string; linkNote?: string;
   techStack: TechTool[];
-  image?: { src: string; alt: string; caption: string };
+  toolsLabel?: string;
+  mascot?: { src: string; alt: string };
+  image?: { src: string; alt: string; caption: string; width?: number; height?: number; fullSize?: boolean };
   discovery?: Discovery;
-  sections: { title: string; paragraphs: string[] }[];
+  skill?: { title: string; description: string; href: string; content: string };
+  sections: { title: string; id?: string; symbol?: string; paragraphs: string[] }[];
 };
 
 export const productExperiments: ProductExperiment[] = [
+  {
+    slug: 'grokbot-agent-organization', title: 'Grokbot Agent Organization', symbol: '🤖', stage: 'In progress · Multi-agent experiment',
+    summary: 'An AI agent organization spanning research, development, security, operations, and marketing. I am building toward a social-media content workflow that brings people to an e-commerce store.',
+    hook: 'Giving AI agents roles and a shared goal.',
+    introduction: 'I created an organization of AI agents, software assistants with assigned roles, and am using Grokbot to deploy it. I share the co-CEO role with one bot that oversees the others. A chief of staff, department leads, and specialist agents form the rest of the organization.',
+    techStack: [{ name: 'Grokbot', logo: '/logos/tech/grok.svg' }],
+    toolsLabel: 'Tools',
+    mascot: { src: '/projects/grokbot-agent-organization/mascot.png', alt: 'A friendly ivory and forest-green robot mascot waving, with an orange orbit-shaped core.' },
+    image: { src: '/projects/grokbot-agent-organization/organization-chart-with-mascot.png', width: 1536, height: 1024, fullSize: true, alt: 'Illustrated Grokbot organization chart showing Nicolas and the co-CEO bot, chief of staff, research, development, security and operations, marketing, project manager, Dr. Egg, and the waving project mascot. The role descriptions below explain each team.', caption: 'The current agent organization. The full-stack developer also works with security and operations. Select the chart to see every role at full size.' },
+    sections: [
+      { title: 'How I organized the agents', symbol: '🤖', paragraphs: [
+        'I gave the agents different responsibilities within a hierarchy. The co-CEO bot oversees the other bots alongside me, with a chief of staff and department leads coordinating the specialist roles.',
+      ] },
+      { title: 'Research', symbol: '🔬', paragraphs: [
+        'The research team has a lead, a literature researcher, Toolsmith, and Verifier. Toolsmith researches skills for agents, and Verifier checks facts.',
+      ] },
+      { title: 'Development', symbol: '💻', paragraphs: [
+        'A full-stack developer leads the development team, which also includes a front-end developer, a back-end developer, a product designer, and a QA engineer responsible for quality assurance.',
+      ] },
+      { title: 'Security and operations', symbol: '🛡️', paragraphs: [
+        'The full-stack developer also participates in the security and operations team, alongside a security engineer, a vulnerability tester, and a DevOps engineer focused on development and operations.',
+      ] },
+      { title: 'Marketing and video production', symbol: '🎬', paragraphs: [
+        'The marketing team includes a growth marketer, a marketplace role, an SEO specialist focused on search visibility, a script and hook writer, a Pinterest and community manager, and an email and lifecycle marketer.',
+        'A video production bot reports to the growth marketer. Its assigned role is to create reels and produce high-quality content for the social-media workflow.',
+      ] },
+      { title: 'Project visibility and creating new bots', symbol: '🥚', paragraphs: [
+        'A project manager bot is responsible for gathering projects across the organization and putting them in Notion so I can see what is going on.',
+        'I also imported Dr. Egg, an existing bot template that helps create other bots.',
+      ] },
+      { title: 'The content and commerce goal', symbol: '🛍️', paragraphs: [
+        'I am trying to get the agents to work together on a content-generation workflow for TikTok and Instagram. The goal is to create reels that bring viewers to an e-commerce marketplace or store where I can sell products.',
+      ] },
+      { title: 'Where the project stands', symbol: '🚧', paragraphs: [
+        'This is an active experiment in progress. I have created the roles and am still working on getting the agents to coordinate and carry out the content-to-commerce workflow.',
+      ] },
+    ],
+  },
+  {
+    slug: 'ai-trading-bot', title: 'AI Trading Bots', symbol: '📊', stage: 'In progress · Two investing experiments',
+    summary: 'Two current AI trading experiments: a Grokbot bot connected to Robinhood with $100, and @musetrader in Muse paper trading $10,000 and publicly sharing its picks and reasoning.',
+    hook: 'Two agents, two investing experiments.',
+    introduction: 'I am running two AI trading experiments: a Grokbot bot connected to Robinhood through MCP with $100 allocated, and a Muse bot paper trading a $10,000 simulated portfolio. Each has its own portfolio and setup.',
+    toolsLabel: 'Tools',
+    techStack: [{ name: 'Grokbot', logo: '/logos/tech/grok.svg' }, { name: 'Robinhood · MCP', logo: '/logos/tech/robinhood.svg' }, { name: 'Muse', logo: '/logos/tech/muse.svg' }],
+    sections: [
+      { title: 'Experiment one: Grokbot + Robinhood · $100', paragraphs: [
+        'I run this bot through Grokbot to analyze companies and potential trades. It is connected to Robinhood through MCP, a standard for connecting AI assistants to external tools and data.',
+        'I allocated $100 to this experiment as I work toward automated trading. It is separate from the agent organization I am building for content and commerce.',
+      ] },
+      { title: 'Experiment two: Muse · $10,000 paper portfolio', paragraphs: [
+        'My second bot runs in Muse under the handle @musetrader. It paper trades $10,000 in simulated funds, with a portfolio separate from the Robinhood experiment.',
+        'The bot publicly publishes the stocks it picks and why it picked them. That public record makes its selections and reasoning visible as the experiment runs.',
+      ] },
+      { title: 'Future idea: follow the Robinhood experiment here', paragraphs: [
+        'I want to share daily updates on this website showing the Robinhood account value, trades, and results as the experiment runs. I am still figuring out how to bring those updates onto the site, either through the bot or by adding them myself.',
+      ] },
+    ],
+  },
   {
     slug: 'trackline', title: 'Trackline', symbol: '📈', stage: 'Concept · Landing-page experiment',
     summary: 'A trading-strategy marketplace concept I turned into a landing page to test early interest before building the platform.',
@@ -45,7 +108,10 @@ export const productExperiments: ProductExperiment[] = [
     introduction: 'Every application asks people to rebuild the same history: what they did, what they learned, and why it matters for this role. I am building Your Career Ally to keep that context in one place, so career preparation can start from a person’s experience rather than a blank chat every time.',
     appUrl: 'https://career-compass-bud.lovable.app', linkLabel: 'Open the Career Ally prototype',
     linkNote: 'The prototype currently uses the name JobTracker AI and opens to a sign-in screen.',
-    techStack: [{ name: 'Lovable', logo: '/logos/tech/lovable.svg' }, { name: 'React', logo: '/logos/tech/react.svg' }, { name: 'Tailwind CSS', logo: '/logos/tech/tailwindcss.svg' }, { name: 'Supabase', logo: '/logos/tech/supabase.svg' }, { name: 'PostgreSQL', logo: '/logos/tech/postgresql.svg' }],
+    techStack: [{ name: 'Lovable', logo: '/logos/tech/lovable.svg' }, { name: 'React', logo: '/logos/tech/react.svg' }, { name: 'Tailwind CSS', logo: '/logos/tech/tailwindcss.svg' }, { name: 'Supabase', logo: '/logos/tech/supabase.svg' }, { name: 'PostgreSQL', logo: '/logos/tech/postgresql.svg' }, { name: 'Claude', logo: '/logos/tech/claude-color.svg' }, { name: 'GPT', logo: '/logos/tech/openai-color.svg' }],
+    toolsLabel: 'Tools',
+    image: { src: '/projects/your-career-ally/applications-dashboard.png', width: 1920, height: 552, alt: 'JobTracker AI applications dashboard with Salesforce, Uber, and Microsoft demo records showing Saved, Applied, and Interviewing statuses, beside AI Chat, Memory, STAR Stories, and Files navigation.', caption: 'The current JobTracker AI prototype with demo applications at real companies. These are illustrative records, not actual applications or advertised openings.' },
+    skill: { title: 'Read the resume-tailoring skill', description: 'A public adaptation of the standalone workflow, with personal paths and private references removed. It contains the instructions rather than the original local scripts.', href: '/skills/resume-tailor.md', content: publicResumeSkill },
     discovery: {
       who: 'I have been talking with MBA classmates who are in the middle of applying for jobs.',
       heardLabel: 'WHAT I HEARD', changedLabel: 'WHAT I BUILT',
@@ -67,17 +133,59 @@ export const productExperiments: ProductExperiment[] = [
         'I added a STAR-story workspace: Situation, Task, Action, and Result. It combines editable story fields with an AI coach that asks focused questions about the context, the person’s responsibility, the actions they took, and the outcome.',
         'The aim is to make answers specific: “I helped the team” becomes a particular problem, a personal contribution, and a result the candidate can explain. A story can also start from saved memories, so application writing and interview preparation reuse the same background.',
       ] },
-      { title: 'What I am exploring next', paragraphs: [
-        'I now see the idea going beyond application tracking. I want to explore a private career “second brain,” a place where people capture milestones, reflect on what they can offer, and decide what to learn or build next. Most career progress never becomes a social-media post, and I want the product to help people remember it anyway.',
-        'The longer-term concept includes an agent that interviews the user, helps prepare stories, and turns selected experience into a public profile or portfolio. It could also suggest projects and learning activities. I am also exploring an MCP connection (MCP is an open standard for connecting AI assistants to outside data) so different assistants could read from and add to the same memory. None of this is built yet.',
+      { id: 'resume-tailoring', title: 'An addition: the resume-tailoring skill', paragraphs: [
+        'Alongside the app, I built a separate resume-tailoring workflow as a Claude skill and adapted it for GPT. I refined it over several tries. It is not integrated into the prototype yet; I plan to add it when I have time.',
+        'The workflow starts with a source resume and a job posting. It selects the experience most relevant to the role, translates that evidence into the employer’s vocabulary, and produces a tailored resume with a record of what changed.',
+      ] },
+      { title: 'Why the workflow starts with evidence', paragraphs: [
+        'The central design choice is to select and translate real experience before optimizing the wording. Each rewritten claim must trace back to the source resume or something I have directly confirmed. This keeps a stronger-sounding sentence from quietly adding experience I do not have.',
+        'The checks cover ownership, scope, time period, units, and qualifiers as well as numbers. A number can stay the same while its meaning changes: projected savings can become realized savings, or a team result can read like an individual achievement. The evidence map is there to catch those changes.',
+        'Selection also happens across the whole resume. A recent role or a large metric does not automatically provide the best evidence for a particular job. The workflow asks what each accomplishment proves and records why stronger evidence was kept or left out.',
+      ] },
+      { title: 'Checking keywords without chasing a score', paragraphs: [
+        'The skill compares the draft against a fixed list of requirements and phrases from the posting. For a missing term, it checks whether truthful rewording or a different supported accomplishment can close the gap. If the experience is not there, it leaves the gap visible.',
+        'Before-and-after keyword coverage makes wording changes inspectable. It is a diagnostic, not a prediction that an applicant tracking system will accept the resume or that a recruiter will offer an interview. Relevance and factual accuracy take priority over the percentage.',
+      ] },
+      { title: 'Checking the document people actually read', paragraphs: [
+        'The workflow preserves the approved Word format and checks the rendered document, not just its text. It looks for page overflow, clipped content, awkward bullet wrapping, inconsistent formatting, and missing or reordered text. A readable single column and contact information in the document body support a straightforward reading order.',
+        'It also reviews recruiter scanability, hiring-manager relevance, and factual fidelity, while distinguishing simulated reviewer perspectives from independent reviews. The change log records meaningful rewrites, selection trade-offs, unresolved gaps, and which checks actually ran. That makes the output something I can inspect instead of accepting a polished draft on trust.',
       ] },
       { title: 'Starting with candidates before a marketplace', paragraphs: [
         'My current hypothesis for reaching users is to start with candidates and a free core experience. I first want to learn whether people keep using the product to record milestones and make career decisions, rather than only visiting when they need a cover letter.',
         'Recruiter and company discovery would come later, once I understand that habit. One design question is how to keep private reflection separate from what a person chooses to publish or share. The marketplace, premium learning support, and the timing of that expansion are still open.',
       ] },
+      { title: 'Next steps: the second brain', paragraphs: [
+        'I want to extend the current structured memory into a private career second brain: a place to capture milestones, reflect on strengths, and turn real experiences into application materials, interview stories, and selected portfolio content. The current memory feature is a starting point; this broader workflow is still planned. Longer-term ideas include an agent that interviews the user, suggests learning or project opportunities, and connects different assistants to the same memory through MCP.',
+      ] },
+      { title: 'Next steps: bring resume tailoring into the app', paragraphs: [
+        'I plan to integrate the separate Claude skill, adapted for GPT, when I have time. The aim is to connect the source resume, job posting, and career memory to the evidence checks, tailored document, and change log in one application workflow. The standalone skill runs in Claude or GPT, while the prototype’s current AI functions use Gemini through Lovable’s gateway.',
+      ] },
+      { title: 'Next steps: hosting and control', paragraphs: [
+        'I want to move from the current Lovable-hosted prototype toward a deployment on Vercel so I have more control over the code and releases. That move is planned; the public prototype remains on its Lovable URL.',
+      ] },
+      { title: 'Suggested priorities before expanding', paragraphs: [
+        'Useful supporting priorities are to test the full application-to-document workflow with users, check whether the evidence map survives resume generation, and evaluate the usefulness of the interview coaching. Those checks would show where to improve the current experience before adding more features.',
+        'For the second brain, useful additions would be clear controls for reviewing, correcting, exporting, and deleting stored career information. For a hosting move, the next work would be to verify authentication, file storage, AI calls, and environment configuration in the new deployment before switching the public link. These are proposed priorities, not completed capabilities.',
+      ] },
       { title: 'Where the project stands', paragraphs: [
         'I am developing the prototype in Lovable with React and Tailwind CSS, Supabase authentication and storage, PostgreSQL records, and server functions for AI chat, document parsing, cover-letter generation, and STAR coaching. The current AI functions call Gemini through Lovable’s gateway.',
         'The project is in progress. The prototype has application tracking, memory, file upload, writing, and story coaching. The broader career platform is still a concept. Next I will evaluate the connected workflows and see whether the product helps people keep useful context and prepare for opportunities more consistently.',
+      ] },
+    ],
+  },
+  {
+    slug: 'ai-influencer-muse', title: 'AI influencer · Muse', symbol: '✨', stage: 'In progress · AI content experiment',
+    summary: 'An experiment using Muse and Higgsfield to create a fictional AI influencer and explore what makes entertainment posts go viral.',
+    hook: 'Exploring entertainment with a fictional creator.',
+    introduction: 'I am trying to use Muse and Higgsfield to create an AI influencer: a fictional person who appears in entertainment posts. I want to see what is possible with AI-generated content and whether someone who does not actually exist can attract a real audience.',
+    techStack: [{ name: 'Muse', logo: '/logos/tech/muse.svg' }, { name: 'Higgsfield', logo: '/logos/tech/higgsfield.png' }],
+    toolsLabel: 'Tools',
+    sections: [
+      { title: 'What I want to learn', paragraphs: [
+        'The question I am exploring is how to make this kind of content go viral. I want to learn what makes people pay attention to entertainment posts from an AI-generated influencer and what approach gives the content the best chance of spreading.',
+      ] },
+      { title: 'Where the project stands', paragraphs: [
+        'This project is in progress. I am still experimenting with Muse and Higgsfield to figure out how to create the influencer and develop the posts.',
       ] },
     ],
   },
