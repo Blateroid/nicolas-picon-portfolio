@@ -28,6 +28,7 @@ export default async function ExperiencePage({ params }: Props) {
     {slug !== 'therat' && <section className="experience-page-section"><h2>My contribution</h2><ul className="profile-highlights">{item.highlights.map(text => <li key={text}>{text}</li>)}</ul></section>}
     {slug !== 'therat' && 'photos' in item && item.photos && <section className="experience-page-section"><h2>Along the way</h2><MediaCarousel label={`${item.company} photos`} items={item.photos}/></section>}
     {slug === 'therat' && <TheraTStory/>}
+    {slug === 'empire-bio-diagnostics' && <p className="experience-sample-link">Writing sample: <Link className="text-link" href="/samples/empire-activation-a83f9d2c">ATP Complete 2 activation guide →</Link></p>}
     <div className="case-bottom"><Link className="text-link" href="/#experience">← Back to experience</Link><Link className="text-link" href="/projects">Explore projects →</Link></div>
   </article>;
 }

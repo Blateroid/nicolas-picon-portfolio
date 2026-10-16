@@ -217,3 +217,5 @@ html[data-focus="investing"] .page-shell:has(.focus-filter):not(:has([data-focus
 @media(prefers-reduced-motion:reduce){.device-peek{transition:none}}
 @media(max-width:640px){.device-peek{width:180px;top:24px}}
 .visual-link:hover .featured-visual.is-device{background:radial-gradient(circle at 30% 20%,#f7f3e6 0,#e4eedf 55%,#d3e4d0 100%)}
+
+.experience-sample-link{margin-top:32px;font-size:14px;line-height:1.6;color:var(--muted)}
