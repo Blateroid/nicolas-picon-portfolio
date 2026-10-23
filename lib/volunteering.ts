@@ -1,6 +1,7 @@
 import { aiSpark } from '@/lib/ai-events';
 // Volunteer role, event, and timing confirmed by Nicolas.
 export const volunteering = [
+  { slug: 'uw-community-leadership', url: '/education/foster-mba#leadership', organization: 'UW community leadership', role: 'Student club leadership', dates: '2025–2026', symbol: '🎓', summary: 'Co-led Foster’s Global Business Association and LatinX club, served in technology and entrepreneurship leadership roles, and organized a class trip to Colombia.' },
   { slug: 'fifa', url: '/volunteering/fifa', organization: 'FIFA World Cup 2026', role: 'Ceremonies Volunteer', dates: 'June 2026', symbol: '⚽', summary: 'Participated in on-pitch ceremonies with the flags at the 2026 FIFA World Cup.' },
   { slug: 'ai-spark', url: aiSpark.url, organization: aiSpark.title, role: 'Committee Member · Hackathon Lead', dates: aiSpark.date, symbol: '✨', summary: aiSpark.summary },
 ];

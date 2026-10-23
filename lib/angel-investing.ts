@@ -1,0 +1,72 @@
+export const angelInvesting = {
+  slug: 'angel-investing-practicum',
+  title: 'Angel Investing Practicum',
+  url: '/projects/angel-investing-practicum',
+  company: 'University of Washington',
+  role: 'Class Fund Team Member',
+  dates: 'Sep 2025 – Jun 2026',
+  location: 'Seattle, WA',
+  category: 'UW Foster MBA · Academic practicum',
+  hook: 'Which startup would you back with $25,000 of university capital?',
+  summary: 'Reviewed around 30 startups and led due diligence on OneCourt and Waku, evaluating opportunities for a potential $25,000 university investment during a year-long MBA practicum.',
+  highlights: [
+    'Reviewed around 30 companies across biotech, AI, marketplaces, consumer packaged goods, and other sectors.',
+    'Led due diligence on OneCourt and Waku; co-authored a Waku investment memo with Ilya Veil.',
+    'Evaluated business models, market opportunity, traction, teams, valuation, cap tables, and investment risks.',
+    'Participated in Keiretsu Forum and Alliance of Angels activities, meeting investors and reviewing additional companies.',
+    'The class did not advance a company to the university investment committee or make an investment that year.',
+  ],
+  instructor: { name: 'Minda Brusse', title: 'Founding Partner at First Row Partners', linkedin: 'https://www.linkedin.com/in/mindabrusse/', firm: 'https://www.firstrowpartners.vc/team-1' },
+  structure: [
+    'In my second year of the University of Washington Foster MBA, I joined the Angel Investing Practicum for the 2025–2026 academic year. We worked as a class investment fund, sourcing and evaluating early-stage companies for a potential $25,000 investment by the university.',
+    'The mandate required more than picking a promising startup. We needed to build a case the class could stand behind, then defend the recommendation before the university’s investment committee. The committee would decide whether to commit the university’s capital.',
+    'Across the year, companies came to class roughly every other week. We reviewed their pitch decks in advance, heard directly from founders, asked questions, and decided which opportunities deserved deeper diligence. We saw around 30 companies, spanning biotech, AI, AI-enabled biotech, marketplaces, consumer packaged goods, and other sectors.',
+  ],
+  learning: 'The course connected early-stage investing concepts to real founder conversations. We studied marketplace dynamics, startup business models, cap table math, financing structures, and valuation, then used those tools to test the assumptions behind a pitch. A compelling story was the starting point for investigation.',
+  processIntro: 'The deal worksheet gave us a common structure for developing an opportunity before writing an investment memo. Leading a deal meant keeping the class informed, identifying the next questions, and deciding whether to continue, hold, or pass as the evidence developed.',
+  process: [
+    { title: 'Understand the business', text: 'Define the problem, product, customer, payer, and revenue model. For science and engineering ventures, distinguish technical progress from evidence that a market wants the product.' },
+    { title: 'Test the opportunity', text: 'Assess market size, alternatives, competitive advantage, and go-to-market strategy. Look for traction that demonstrates customer behavior rather than activity alone.' },
+    { title: 'Evaluate the team and economics', text: 'Examine founder capabilities, leadership, unit economics, capital needs, and deal terms. Connect financing milestones and ownership dilution to plausible investor outcomes.' },
+    { title: 'Make the uncertainty explicit', text: 'Identify what must go right, what could break the business, and what we would still not know at the decision date. Seek expert perspectives and test whether the opportunity fits the class thesis and university guidelines.' },
+  ],
+  companies: [
+    { name: 'OneCourt', url: 'https://www.onecourt.io/', logo: '/experience/angel-investing/onecourt.png', width: 1500, height: 431, dark: false, description: 'OneCourt translates live sports gameplay into tactile feedback so blind and low-vision fans can follow the action through touch.', paragraphs: [
+      'I led the class’s due diligence on OneCourt, a company whose mission and progress we found compelling. At the time of our review, the company reported professional-team deployments, access to official league tracking data, and early consumer demand. Those were meaningful signs that the team could open doors and bring a new accessibility experience to sports fans.',
+      'Our diligence examined the venue business alongside the planned expansion into home use. We asked how consumer acquisition would scale, how hardware production and data rights would affect economics, and whether early interest would translate into paying subscribers who stayed. I also examined the market-sizing model, including its assumptions about affordability, adoption, pricing, and customer retention. The size of the broader audience alone did not establish the reachable, paying market.',
+      'The investment decision came down to the path from that traction to a venture-scale business. At the proposed valuation and terms, we needed confidence in a growth and financing plan that could support subsequent funding rounds and the returns required by an early-stage investment. We did not gain enough confidence in the CEO’s plan to raise that follow-on capital and scale the business to justify investing at that point.',
+      'We passed on the opportunity at the terms available then, while recognizing the company’s progress and the opportunities ahead of it. The experience sharpened an important distinction for me: admiring a company’s product, mission, and traction does not automatically make its current financing round the right investment for our fund.',
+    ] },
+    { name: 'Waku', url: 'https://livewaku.com/', logo: '/experience/angel-investing/waku.png', width: 300, height: 255, dark: true, description: 'Waku is a consumer beverage brand making non-sparkling, caffeine-free prebiotic herbal tea.', paragraphs: [
+      'I led due diligence on Waku and co-authored an investment memo with Ilya Veil. Our diligence team recommended a $25,000 investment as part of the course’s evaluation process.',
+      'Our thesis centered on a differentiated product in functional beverages, evidence of consumer demand in retail, and a distribution strategy with room to expand. We focused on sales velocity, the rate at which products sell in each store, rather than treating the number of retail locations as sufficient proof of demand.',
+      'I connected the commercial thesis to valuation and investor returns through comparable-company multiples, VC and reverse-VC methods, and scenario-weighted outcomes. We modeled how future financing and dilution would affect ownership, and treated growth and exit scenarios as assumptions to test.',
+      'The analysis also examined the risks of scaling a physical product: working capital, supply reliability, shelf competition, and whether demand would carry into new markets. The exercise was about weighing the upside against the execution required to reach it.',
+    ] },
+  ],
+  casesIntro: 'Alongside live deals, I worked through cases that made the tradeoffs in early-stage investing more concrete: how a fund wins access to founders, how financing changes ownership, and how a marketplace earns trust.',
+  cases: [
+    { title: 'Floodgate · fund strategy', text: 'I analyzed deal flow, founder relationships, power-law returns, and the relationship between fund size and investment strategy. My recommendation favored a deliberate increase in fund size while examining the pressure that more capital places on stage focus and check sizes.' },
+    { title: 'Lovepop · financing and cap tables', text: 'I built cap tables to compare Founder.org and Techstars financing paths. I favored the Founder.org convertible note in the case because it offered more upfront capital with less founder dilution, and connected that choice to the working-capital needs of a physical product business.' },
+    { title: 'PunchTab · matching capital to the business', text: 'I assessed bootstrapping versus a seed raise, angels versus venture investors, and a convertible note versus a priced round. My recommendation paired an early angel round with a convertible note to support experimentation and distribution while the business model was still developing.' },
+  ],
+  marketplace: {
+    title: 'Rover · marketplace happiness and growth loops',
+    description: 'I illustrated how sitter quality, reviews, owner trust, and repeat bookings reinforce one another, then mapped a growth loop connecting sitter promotion, new owners, referrals, and owners becoming sitters. My analysis identified trust as the critical condition for growth, with poor supply quality and off-platform transactions as threats to the loop.',
+    url: '/experience/angel-investing/rover-marketplace-analysis.pdf',
+    preview: '/experience/angel-investing/rover-marketplace-preview.jpg', width: 918, height: 1188,
+  },
+  networksIntro: 'The practicum also took me beyond the classroom. Through participation in two angel networks, I met experienced investors, had conversations about how they evaluate opportunities, and saw additional companies beyond the class’s deal flow.',
+  networks: [
+    { name: 'Keiretsu Forum', url: 'https://www.keiretsuforum.com/', logo: '/experience/angel-investing/keiretsu.svg', width: 240, height: 80 },
+    { name: 'Alliance of Angels', url: 'https://www.allianceofangels.com/', logo: '/experience/angel-investing/aoa.jpg', width: 360, height: 152 },
+  ],
+  outcome: [
+    'By the end of the year, no company had earned the shared conviction we needed as a class fund. We chose not to advance an investment to the university’s committee and preserved the capital rather than investing to complete an assignment.',
+    'The most lasting lesson was discipline. We could recognize an interesting company, build a thoughtful investment thesis, and still decide that the fund should pass. Saying no is sometimes more important than saying yes.',
+  ],
+  sources: [
+    { label: 'UW Foster · Angel Investing course structure', url: 'https://foster.uw.edu/wp-content/uploads/2023/07/ENTRE-579-Angel-Investing.pdf' },
+    { label: 'UW Foster · Minda Brusse faculty profile', url: 'https://foster.uw.edu/faculty-research/directory/minda-vale-brusse/' },
+  ],
+};

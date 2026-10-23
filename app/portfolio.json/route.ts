@@ -1,3 +1,8 @@
+import { ventureProjects } from '@/lib/venture-projects';
+import { gbaStory } from '@/lib/gba';
+import { mentem } from '@/lib/mentem';
+import { empireStory } from '@/lib/empire';
+import { angelInvesting } from '@/lib/angel-investing';
 import { mbaExperience } from '@/lib/mba';
 import { aiSpark, aiSparkPhotos, techStory, techArtifacts, hackathonSubmissions } from '@/lib/ai-events';
 import { volunteering } from '@/lib/volunteering';
@@ -13,13 +18,13 @@ export const dynamic = 'force-static';
 export function GET() {
   return Response.json({
     name: 'Nicolas Picon', profile: '/about', email: contactEmail, linkedin: 'https://www.linkedin.com/in/npicon',
-    experience: experience.map(item => ({ ...item, url: `/experience/${item.slug}`, logo: `/logos/${item.logo}`, ...(item.slug === 'therat' ? { story: theratStory, photos: theratPhotos, pitchSlides: theratPitchSlides } : {}) })),
-    leadership: leadership.map(item => ({ ...item, url: `/leadership/${item.slug}`, institution: 'University of Washington · Foster School of Business', ...(item.slug === 'technology' ? { story: techStory, artifacts: techArtifacts, participantSubmissions: hackathonSubmissions } : {}) })),
+    experience: experience.map(item => ({ ...item, url: `/experience/${item.slug}`, logo: `/logos/${item.logo}`, ...(item.slug === 'empire-bio-diagnostics' ? { story: empireStory } : {}), ...(item.slug === 'therat' ? { story: theratStory, photos: theratPhotos, pitchSlides: theratPitchSlides } : {}) })),
+    leadership: leadership.map(item => ({ ...item, url: `/leadership/${item.slug}`, institution: 'University of Washington · Foster School of Business', ...(item.slug === 'technology' ? { story: techStory, artifacts: techArtifacts, participantSubmissions: hackathonSubmissions } : {}), ...(item.slug === 'global-business-association' ? { story: gbaStory } : {}) })),
     volunteering, awards,
     events: [{ ...aiSpark, photos: aiSparkPhotos }],
     education, mbaExperience, interests,
-    projects: [...publicProjects.map(item => ({ title: item.title, summary: item.summary, role: item.role, designTools: item.designTools, takeaway: item.takeaway, discovery: item.discovery, url: `/projects/${item.slug}`, sources: item.sources, ...(item.photos?.length ? { photos: item.photos } : {}) })), ...projectSummaries.filter(item => 'href' in item).map(item => ({ title: item.title, summary: item.summary, url: 'href' in item ? item.href : `/projects/${item.slug}`, attribution: 'attribution' in item ? item.attribution : undefined }))],
+    projects: [...ventureProjects.map(project => ({ ...project, url: `/projects/${project.slug}` })), { title: mentem.title, summary: mentem.summary, role: mentem.role, category: mentem.category, url: mentem.url, story: mentem }, { title: angelInvesting.title, summary: angelInvesting.summary, role: angelInvesting.role, category: angelInvesting.category, url: angelInvesting.url, story: angelInvesting }, ...publicProjects.map(item => ({ title: item.title, summary: item.summary, role: item.role, designTools: item.designTools, takeaway: item.takeaway, discovery: item.discovery, url: `/projects/${item.slug}`, sources: item.sources, ...(item.photos?.length ? { photos: item.photos } : {}) })), ...projectSummaries.filter(item => 'href' in item).map(item => ({ title: item.title, summary: item.summary, url: 'href' in item ? item.href : `/projects/${item.slug}`, attribution: 'attribution' in item ? item.attribution : undefined }))],
     personalProjects: [{ ...stickerBuddy, url: `/projects/${stickerBuddy.slug}`, status: 'Built and used by Nicolas for his own album' }, ...productExperiments.map(project => ({ ...project, url: `/projects/${project.slug}`, status: project.stage })), ...projectSummaries.filter(item => item.slug === 'blue-ember').map(item => ({ ...item, url: `/projects/${item.slug}`, status: 'Personal project' }))],
-    projectPreviews: projectSummaries.filter(item => !('href' in item) && item.slug !== stickerBuddy.slug && item.slug !== 'blue-ember' && !productExperiments.some(project => project.slug === item.slug)).map(item => ({ ...item, url: `/projects/${item.slug}`, status: 'Placeholder — project details coming soon' })),
+    projectPreviews: projectSummaries.filter(item => !('href' in item) && !ventureProjects.some(project => project.slug === item.slug) && item.slug !== mentem.slug && item.slug !== angelInvesting.slug && item.slug !== stickerBuddy.slug && item.slug !== 'blue-ember' && !productExperiments.some(project => project.slug === item.slug)).map(item => ({ ...item, url: `/projects/${item.slug}`, status: 'Placeholder — project details coming soon' })),
   });
 }

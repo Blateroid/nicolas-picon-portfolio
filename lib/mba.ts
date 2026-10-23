@@ -1,10 +1,12 @@
+import { ventureProjects } from '@/lib/venture-projects';
+import { mentem } from '@/lib/mentem';
+import { angelInvesting } from '@/lib/angel-investing';
 import { education, experience } from '@/lib/profile';
 import { leadership } from '@/lib/leadership';
 import { aiSpark } from '@/lib/ai-events';
 import { publicProjects } from '@/lib/projects';
 
 const foster = education[0];
-const practicum = experience.find(item => item.slug === 'angel-investing-practicum')!;
 const therat = experience.find(item => item.slug === 'therat')!;
 const heyLily = publicProjects.find(item => item.slug === 'hey-lily')!;
 export const mbaExperience = {
@@ -16,8 +18,8 @@ export const mbaExperience = {
     { title: 'Microsoft independent study', description: 'Designed and evaluated an LLM prompt for email-intent classification using real data.' },
     { title: 'Aerospace consulting', description: 'Developed cost-allocation analysis and pricing recommendations for aerospace components.' },
   ],
-  projects: [{ title: heyLily.title, description: heyLily.summary, url: `/projects/${heyLily.slug}` }],
-  investing: [{ title: 'Angel Investing Practicum', description: practicum.summary, url: `/experience/${practicum.slug}` }],
+  projects: [...ventureProjects.map(project => ({ title: project.title, description: project.summary, url: `/projects/${project.slug}` })), { title: mentem.title, description: mentem.summary, url: mentem.url }, { title: heyLily.title, description: heyLily.summary, url: `/projects/${heyLily.slug}` }],
+  investing: [{ title: angelInvesting.title, description: angelInvesting.summary, url: angelInvesting.url }],
   commercialization: [{ title: 'TheraT', description: therat.summary, url: `/experience/${therat.slug}` }],
   leadership: leadership.map(item => ({ title: item.organization, role: item.role, term: item.term, description: item.summary, url: `/leadership/${item.slug}` })),
   community: [{ title: aiSpark.title, role: aiSpark.role, description: aiSpark.summary, url: aiSpark.url }],

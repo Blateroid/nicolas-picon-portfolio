@@ -1,3 +1,9 @@
+import { ventureProjects } from '@/lib/venture-projects';
+import { VentureProjectPage } from '@/components/venture-project-page';
+import { MentemPage } from '@/components/mentem-page';
+import { mentem } from '@/lib/mentem';
+import { AngelInvestingPage } from '@/components/angel-investing-page';
+import { angelInvesting } from '@/lib/angel-investing';
 import { BlueEmberStory } from '@/components/blue-ember-story';
 import { MediaCarousel } from '@/components/media-carousel';
 import { DemoPlayers } from '@/components/demo-players';
@@ -23,6 +29,10 @@ export default async function CaseStudy({ params }: Props) {
  if (slug === 'muse-paper-trading-bot') permanentRedirect('/projects/ai-trading-bot');
  const preview = projectSummaries.find(project => project.slug === slug);
  if (preview && 'href' in preview && preview.href) permanentRedirect(preview.href);
+ const venture = ventureProjects.find(project => project.slug === slug);
+ if (venture) return <VentureProjectPage project={venture}/>;
+ if (slug === mentem.slug) return <MentemPage/>;
+ if (slug === angelInvesting.slug) return <AngelInvestingPage/>;
  if (slug === 'blue-ember') return <BlueEmberStory/>;
  if (slug === stickerBuddy.slug) return <StickerBuddyStory/>;
  const experiment = productExperiments.find(project => project.slug === slug);

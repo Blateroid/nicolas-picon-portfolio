@@ -1,3 +1,4 @@
+import { empireStory } from '@/lib/empire';
 import type { Discovery } from '@/lib/discovery';
 // Public profile summaries from Nicolas's supplied running resume.
 export const contactEmail = 'nicolas.picon@hotmail.com';
@@ -59,12 +60,6 @@ export const experience = [
     ],
   },
   {
-    slug: 'angel-investing-practicum', company: 'University of Washington', logo: 'uw.png', role: 'Angel Investing Practicum · Class Fund Team Member',
-    dates: 'Sep 2025 – Jun 2026', location: 'Seattle, WA · Academic practicum',
-    summary: 'Sourced startup opportunities, developed an investment thesis, and wrote investment memos as part of a student investment fund.',
-    highlights: ['Sourced 15 deals and wrote two investment memos.', 'Applied comparable-company multiples, VC and reverse-VC methods, and scenario-weighted valuation.', 'Worked with the class fund team to select a startup as a candidate for a proposed $25,000 university investment.'],
-  },
-  {
     slug: 'uber', company: 'Uber', logo: 'uber.png', role: 'Senior Product Operations Manager Intern',
     dates: 'Jun – Aug 2025', location: 'Seattle, WA · Global Digital Experience Team',
     summary: 'Led product discovery and design for Uber Eats merchant-support automation, translating support pain points into requirements and an experience aligned with 32 cross-functional stakeholders.',
@@ -97,37 +92,9 @@ export const experience = [
     highlights: ['Assessed 15 startup pitches; two advanced to further due diligence and investment consideration.', 'Conducted due diligence on five startups, across market size, competition, team, and technology.', 'Built a liquidation-waterfall model using term-sheet and cap-table data to compare investment returns across three exit scenarios.'],
   },
   {
-    slug: 'mentem-lab', company: 'Mentem.Lab', logo: 'mentem.png', role: 'Business Lead',
-    dates: 'Oct 2024 – Mar 2025', location: 'Seattle, WA',
-    summary: 'Led business strategy for an early-stage mental-health startup. Customer discovery informed a pivot from a patient-facing chatbot to a care-management tool for provider check-ins.',
-    highlights: ['Conducted nine discovery interviews with care providers.', 'Built the business plan and pitch deck, and recruited two engineers and one designer.', 'Led the team to the finals of the Hollomon Health Innovation Challenge.'],
-    discovery: {
-      stat: '9', statLabel: 'discovery interviews with care providers',
-      extraStats: [{ stat: '2', label: 'pitch competitions' }],
-      who: 'We interviewed care providers, including an OB-GYN, a physician who cares for high-risk pregnancies, and a primary care physician. Then we tested our assumptions at two pitch competitions: the Hollomon Health Innovation Challenge and the social venture competition at Seattle Pacific University.',
-      quotes: [
-        { text: 'We can do better for screening.', source: 'A physician who cares for high-risk pregnancies' },
-        { text: 'Make my life easier.', source: 'The same physician, on what would make a clinician pay for a tool' },
-      ],
-      heardLabel: 'WHAT WE HEARD', changedLabel: 'WHAT WE DID',
-      findings: [
-        { heard: 'Screening still runs on paper. The patient fills out a form, a nurse scores it, someone enters it by hand, and staff then look for a social worker.', changed: 'We designed routine automation and integration with the electronic health record, the system where clinics keep patient charts, so screening stops being one more manual task.' },
-        { heard: 'Follow-up depends on the doctor or staff remembering. An OB-GYN wished for a system that checks in with patients monthly, more often than her team has time for.', changed: 'We pivoted from a patient-facing chatbot to a care-management tool that handles provider check-ins.' },
-        { heard: 'Clinicians wanted to see who needs attention first, with levels of alert and what changed since the last conversation.', changed: 'We added an AI-derived risk score so clinicians can prioritize the patients most at risk.' },
-        { heard: 'After screening, the biggest barriers were availability of care, insurance coverage, and patients not knowing what to do next.', changed: 'We added personalized care-path recommendations for next steps.' },
-      ],
-    } satisfies Discovery,
-    photos: [
-      { src: '/experience/mentem-lab/hollomon-team.jpg', alt: 'Four Mentem.lab team members at their booth under a Hollomon Health Innovation Challenge sign.', caption: 'Our team at the Hollomon Health Innovation Challenge.' },
-      { src: '/experience/mentem-lab/buerk-center-team.jpg', alt: 'Four Mentem.lab team members beside a Buerk Center for Entrepreneurship banner and a Hollomon Health Innovation Challenge sign.', caption: 'With the team at the Hollomon Health Innovation Challenge.' },
-      { src: '/experience/mentem-lab/hollomon-booth.jpg', alt: 'The Mentem.lab booth with two posters covering the problem, market, go-to-market strategy, solution, and traction.', caption: 'Our Mentem.lab booth.' },
-      { src: '/experience/mentem-lab/social-venture-team.jpg', alt: 'Three Mentem.lab team members standing between their posters at the Seattle Pacific University social venture competition.', caption: 'At the social venture competition at Seattle Pacific University.' },
-    ],
-  },
-  {
     slug: 'empire-bio-diagnostics', company: 'Empire Bio Diagnostics', logo: 'empire.png', role: 'Product, operations & engineering',
     dates: '2020 – 2024', location: 'Hicksville, NY',
-    summary: 'Worked across product management, business operations, production, and R&D at a biotechnology startup developing rapid cleanliness-testing systems.',
+    summary: empireStory.summary,
     highlights: ['Technical Product Manager · Apr 2023 – Aug 2024: owned product roadmaps, launch requirements, pricing, customer discovery, and ten web launches delivered on schedule and under budget.', 'Business Operations Manager · Sep 2022 – Apr 2024: led 27 operators, managed a $6 million annual operating budget, and introduced operational upgrades that reduced production costs by 20%.', 'Production Manager · Sep 2021 – Sep 2022: led a 12-person team, built production forecasts, and improved production efficiency from 80% to 95%.', 'R&D Engineer · Jul 2020 – Sep 2022: developed automation programs, tested handheld-device and web-app software, and ran repeatable laboratory experiments.'],
   },
 ];

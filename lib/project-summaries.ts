@@ -1,3 +1,6 @@
+import { ventureProjects } from './venture-projects';
+import { mentem } from './mentem';
+import { angelInvesting } from './angel-investing';
 import { stickerBuddy } from './sticker-buddy';
 import { productExperiments } from './product-experiments';
 // Short project descriptions; detailed stories are linked where available.
@@ -7,12 +10,15 @@ const experiment = (slug: string) => {
   const { symbol, title, summary, stage, mascot } = found;
   return { slug, symbol, title, summary, stage, mascot };
 };
-// Order is display order. featuredLarge renders as a big card; homepage picks the three compact cards on the homepage; placeholder items (no story yet) sit last.
+// Order is display order. featuredLarge renders as a big card; homepage selects compact cards for the homepage; placeholder items (no story yet) sit last.
 export const projectSummaries = [
   { slug: stickerBuddy.slug, symbol: '⚽', title: stickerBuddy.title, summary: stickerBuddy.summary, featuredLarge: true },
-  { ...experiment('your-career-ally'), homepage: true },
+  ...ventureProjects.map(project => ({ slug: project.slug, symbol: project.symbol, title: project.title, summary: project.summary, stage: project.category, homepage: project.slug === 'shiftspark' })),
+  { slug: mentem.slug, symbol: mentem.symbol, title: mentem.title, summary: mentem.summary, stage: mentem.category },
+  experiment('your-career-ally'),
   { slug: 'gtm-ai-lead-discovery', symbol: '🔎', title: 'GTM AI lead discovery engine', summary: 'A weekly pipeline that finds, scores, and enriches leads, then emails Runic’s founder the top 20.', href: '/experience/runic-ai#lead-discovery', attribution: 'Built at Runic.AI', homepage: true },
-  { ...experiment('grokbot-agent-organization'), homepage: true },
+  experiment('grokbot-agent-organization'),
+  { slug: angelInvesting.slug, symbol: '🚀', title: angelInvesting.title, summary: angelInvesting.summary, stage: angelInvesting.category, homepage: true },
   experiment('ai-trading-bot'),
   experiment('trackline'),
   experiment('ai-influencer-muse'),

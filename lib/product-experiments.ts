@@ -69,9 +69,6 @@ export const productExperiments: ProductExperiment[] = [
         'My second bot runs in Muse under the handle @musetrader. It paper trades $10,000 in simulated funds, with a portfolio separate from the Robinhood experiment.',
         'The bot publicly publishes the stocks it picks and why it picked them. That public record makes its selections and reasoning visible as the experiment runs.',
       ] },
-      { title: 'Future idea: follow the Robinhood experiment here', paragraphs: [
-        'I want to share daily updates on this website showing the Robinhood account value, trades, and results as the experiment runs. I am still figuring out how to bring those updates onto the site, either through the bot or by adding them myself.',
-      ] },
     ],
   },
   {
