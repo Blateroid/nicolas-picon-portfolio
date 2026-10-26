@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound, redirect } from 'next/navigation';
 import { volunteering } from '@/lib/volunteering';
 type Props = { params: Promise<{ slug: string }> };
@@ -18,8 +19,8 @@ export default async function VolunteeringPage({ params }: Props) {
   return <article className="page-shell experience-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured).replace(/</g, '\\u003c') }}/>
     <Link className="text-link" href="/#volunteering">← All volunteering</Link>
-    <header className="case-heading"><span className="placeholder-symbol" aria-hidden="true">{item.symbol}</span><p className="eyebrow">VOLUNTEERING</p><h1>{item.organization}</h1><p className="experience-page-role">{item.role}</p><p className="entry-location">{item.dates}</p><p className="case-intro">{item.summary}</p></header>
-    <section className="placeholder-note"><h2>More from this role</h2><p>More about the event and my volunteer contribution is coming soon.</p></section>
+    <header className="case-heading">{'logo' in item && item.logo ? <Image className="volunteering-detail-logo" src={item.logo} alt={`${item.organization} logo`} width={200} height={48}/> : <span className="placeholder-symbol" aria-hidden="true">{item.symbol}</span>}<p className="eyebrow">VOLUNTEERING</p><h1>{item.organization}</h1><p className="experience-page-role">{item.role}</p>{item.dates && <p className="entry-location">{item.dates}</p>}<p className="case-intro">{item.summary}</p></header>
+    <section className="placeholder-note"><h2>More from this role</h2><p>{item.slug === 'nucleate' ? 'More about my Nucleate leadership role is coming soon.' : 'More about the event and my volunteer contribution is coming soon.'}</p></section>
     <div className="case-bottom"><Link className="text-link" href="/#volunteering">← Back to volunteering</Link><Link className="text-link" href="/#experience">Explore experience →</Link></div>
   </article>;
 }

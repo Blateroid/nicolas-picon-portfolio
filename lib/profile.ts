@@ -92,6 +92,13 @@ export const experience = [
     highlights: ['Assessed 15 startup pitches; two advanced to further due diligence and investment consideration.', 'Conducted due diligence on five startups, across market size, competition, team, and technology.', 'Built a liquidation-waterfall model using term-sheet and cap-table data to compare investment returns across three exit scenarios.'],
   },
   {
+    slug: 'microsoft-student-consulting', company: 'Microsoft', logo: 'microsoft.jpg', role: 'Student Consultant',
+    dates: 'Jan – Mar 2025', location: 'Student consulting project',
+    engagement: 'Academic consulting project with Microsoft.',
+    summary: 'Participated in a student consulting project with Microsoft from January to March 2025.',
+    highlights: [],
+  },
+  {
     slug: 'empire-bio-diagnostics', company: 'Empire Bio Diagnostics', logo: 'empire.png', role: 'Product, operations & engineering',
     dates: '2020 – 2024', location: 'Hicksville, NY',
     summary: empireStory.summary,

@@ -30,7 +30,7 @@ export function GbaStory() {
       {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
       {section.id === 'diwali' && <MediaCarousel label="Diwali celebration" items={story.photos.diwali}/>}
       {section.id === 'diwali' && <EventClips items={story.videos.diwali} label="Diwali"/>}
-      {section.id === 'year-round' && <MediaCarousel label="Chinese New Year celebration" items={story.photos.lunar}/>}
+      {section.id === 'lunar-new-year' && <MediaCarousel label="Chinese New Year celebration" items={story.photos.lunar}/>}
       {section.id === 'latin-carnival' && <MediaCarousel label="Latin Carnival celebration" items={story.photos.latin}/>}
       {section.id === 'latin-carnival' && <EventClips items={story.videos.latin} label="Latin Carnival"/>}
     </section>)}
